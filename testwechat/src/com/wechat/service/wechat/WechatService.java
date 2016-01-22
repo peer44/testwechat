@@ -32,7 +32,7 @@ public class WechatService {
 			textMessage.setToUserName(fromUserName);
 			textMessage.setFromUserName(toUserName);
 			textMessage.setCreateTime(System.currentTimeMillis());
-			textMessage.setContent("我已经受到你发来的消息了");
+			textMessage.setContent("我已经收到你发来的消息了");
 			responseMessage = WechatMessageUtil.textMessageToXml(textMessage);
 		}
 		log.info(responseMessage);

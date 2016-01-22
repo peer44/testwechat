@@ -27,4 +27,12 @@ public class UserDaoImpl implements UserDao {
         return userList;
 	}
 
+	@Override
+	public boolean isExists(String username) {
+		Query query = sessionFactory.openSession()
+				.createQuery("from User u where u.username = :username").setParameter("username", username);
+		System.out.println(query.list().size());
+		return query.list().size()>0?true:false;
+	}
+
 }

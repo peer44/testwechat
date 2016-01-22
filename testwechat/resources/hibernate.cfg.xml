@@ -34,7 +34,6 @@
 		<!-- 避免这个错误信息Disabling contextual LOB creation as createClob() method threw error :java.lang.reflect.InvocationTargetException -->
 		<property name="hibernate.temp.use_jdbc_metadata_defaults">false</property>
 		<!-- 罗列所有持久化类的类名 -->
-		<mapping class="com.wechat.entity.User"/>
-		<mapping class="com.wechat.entity.News"/>
+		<mapping class="com.wechat.entity.po.User"/>
 	</session-factory>
 </hibernate-configuration>

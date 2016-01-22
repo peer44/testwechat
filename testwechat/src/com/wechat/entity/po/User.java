@@ -1,5 +1,7 @@
 package com.wechat.entity.po;
 
+import java.sql.Blob;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -19,6 +21,26 @@ public class User {
 	private String username;
 	//密码
 	private String password;
+	//注册日期
+	private String registDate;
+	//头像
+	private Blob userPic;
+	
+	
+	
+	
+	public String getRegistDate() {
+		return registDate;
+	}
+	public void setRegistDate(String registDate) {
+		this.registDate = registDate;
+	}
+	public Blob getUserPic() {
+		return userPic;
+	}
+	public void setUserPic(Blob userPic) {
+		this.userPic = userPic;
+	}
 	public String getUserid() {
 		return userid;
 	}

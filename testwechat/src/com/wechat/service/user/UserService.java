@@ -6,5 +6,6 @@ import com.wechat.entity.po.User;
 
 public interface UserService {
 	public List<User> getAllUser();
+	public boolean isExists(String username);
 
 }

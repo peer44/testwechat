@@ -45,6 +45,7 @@ public class UserTest {
 		user.setUsername("刘德华");
 		user.setPassword("andy");
 		session.save(user);
+		System.out.println("11");
 	}
 
 }
