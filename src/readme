@@ -1,0 +1,39 @@
+依赖jar包
+
+el表达式需要
+jstl
+
+
+3dom4j
+是一个Java的XML API
+
+Xstream
+是一种OXMapping 技术，是用来处理XML文件序列化的框架,在将javaBean序列化，或将XML文件反序列化的时候，不需要其它辅助类和映射文件，使得XML序列化不再繁琐。
+
+spring核心
+	spring-core
+		2commons-logging
+	spring-beans
+	spring-context
+	spring-context-support
+	spring-expression
+spring mvc
+	spring-webmvc[DispatcherServlet在里面]
+	spring-web[@Controller什么的在web中]
+		spring-apo
+			1apoalliance
+	spring-beans
+	spring-context
+	
+spring与hibernate整合
+	spring-orm-4.2.3.RELEASE.jar
+		依赖spring-jdbc,spring-tx
+		
+spring注入需要
+	aspectjweaver.jar
+日志需要log4j.jar
+对象到xml需要xstream.jar
+	依赖xmlpull.jar
+spring-context-*中包含了缓存的实现
+kaptcha-2.3.2.jar验证码的框架
+commons-lang-2.6.jar apache工具类

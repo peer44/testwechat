@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-4.2.xsd 
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context-4.2.xsd 
+		http://www.springframework.org/schema/mvc 
+		http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd 
+		http://www.springframework.org/schema/task 
+		http://www.springframework.org/schema/task/spring-task-4.2.xsd">
+
+	<!-- 扫描路径 -->
+	<context:component-scan base-package="com.wechat.controller">
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+
+	<!-- 配置根视图 -->
+	<mvc:view-controller path="/" view-name="index" />
+
+	<!-- 激活基于注解的配置 @RequestMapping, @ExceptionHandler,数据绑定 ,@NumberFormat , 
+		@DateTimeFormat ,@Controller ,@Valid ,@RequestBody ,@ResponseBody等 -->
+	<mvc:annotation-driven />
+
+	<!-- 静态资源配置 -->
+	<mvc:resources location="/assets/" mapping="/assets/**"></mvc:resources>
+
+	<!-- 视图层配置 -->
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	<!-- 配置验证码 -->
+	<bean id="captchaProducer" class="com.google.code.kaptcha.impl.DefaultKaptcha">
+		<property name="config">
+			<bean class="com.google.code.kaptcha.util.Config">
+				<constructor-arg>
+					<props>
+						<!-- 图片边框 -->
+						<prop key="kaptcha.border">no</prop>
+						<!-- 图片宽度 -->
+						<prop key="kaptcha.image.width">100</prop>
+						<!-- 图片高度 -->
+						<prop key="kaptcha.image.height">45</prop>
+						<!-- 验证码的字符 -->
+						<prop key="kaptcha.textproducer.char.string">0123456789abcdefghijklmnopqrstuvwxyz快过年了我想回家</prop>
+						<!-- 验证码字体颜色 -->
+						<prop key="kaptcha.textproducer.font.color">0,0,255</prop>
+						<!-- 验证码的效果，水纹 -->
+						<prop key="kaptcha.obscurificator.impl">com.google.code.kaptcha.impl.WaterRipple</prop>
+						<!-- 验证码字体大小 -->
+						<prop key="kaptcha.textproducer.font.size">38</prop>
+						<prop key="kaptcha.session.key">code</prop>
+						<!-- 验证码字数 -->
+						<prop key="kaptcha.textproducer.char.length">4</prop>
+						<!-- 验证码文字间距 -->
+						<prop key="kaptcha.textproducer.char.space">2</prop>
+						<!-- 验证码字体 -->
+						<prop key="kaptcha.textproducer.font.names">宋体,楷体,微软雅黑</prop>
+						<!-- 不加噪声 -->
+						<prop key="kaptcha.noise.impl">com.google.code.kaptcha.impl.NoNoise</prop>
+					</props>
+				</constructor-arg>
+			</bean>
+		</property>
+	</bean>
+
+</beans>
