@@ -50,8 +50,8 @@ public class CaptchaController {
 			model.addAttribute("timestamp", timestamp);
 		}
 		HttpSession session = request.getSession();
-		String code = (String) session.getAttribute(Constants.KAPTCHA_SESSION_KEY);
-		System.out.println("验证码: " + code);
+		//String code = (String) session.getAttribute(Constants.KAPTCHA_SESSION_KEY);
+		//System.out.println("验证码: " + code);
 
 		response.setDateHeader("Expires", 0);
 		response.setHeader("Cache-Control", "no-store, no-cache, must-revalidate");
@@ -61,7 +61,7 @@ public class CaptchaController {
 
 		String capText = captchaProducer.createText();
 		session.setAttribute(Constants.KAPTCHA_SESSION_KEY, capText);
-
+		System.out.println("capText:"+capText);
 		BufferedImage bi = captchaProducer.createImage(capText);
 		ServletOutputStream out = response.getOutputStream();
 		ImageIO.write(bi, "jpg", out);

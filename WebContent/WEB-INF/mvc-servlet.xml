@@ -49,15 +49,18 @@
 						<prop key="kaptcha.image.width">100</prop>
 						<!-- 图片高度 -->
 						<prop key="kaptcha.image.height">45</prop>
+						<!-- 验证码背景颜色渐变，开始颜色 -->
+						<prop key="kaptcha.background.clear.from">248,248,248</prop>
+						<!-- 验证码背景颜色渐变，结束颜色 -->
+						<prop key="kaptcha.background.clear.to">248,248,248</prop>
 						<!-- 验证码的字符 -->
-						<prop key="kaptcha.textproducer.char.string">0123456789abcdefghijklmnopqrstuvwxyz快过年了我想回家</prop>
+						<prop key="kaptcha.textproducer.char.string">0123456789</prop>
 						<!-- 验证码字体颜色 -->
-						<prop key="kaptcha.textproducer.font.color">0,0,255</prop>
+						<prop key="kaptcha.textproducer.font.color">89,125,55</prop>
 						<!-- 验证码的效果，水纹 -->
 						<prop key="kaptcha.obscurificator.impl">com.google.code.kaptcha.impl.WaterRipple</prop>
 						<!-- 验证码字体大小 -->
-						<prop key="kaptcha.textproducer.font.size">38</prop>
-						<prop key="kaptcha.session.key">code</prop>
+						<prop key="kaptcha.textproducer.font.size">40</prop>
 						<!-- 验证码字数 -->
 						<prop key="kaptcha.textproducer.char.length">4</prop>
 						<!-- 验证码文字间距 -->

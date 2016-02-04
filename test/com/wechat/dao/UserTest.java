@@ -57,7 +57,7 @@ public class UserTest {
 	@Test
 	public void testSaveUser() {
 		User user = new User();
-		user.setUsername("黎明");
+		user.setUsername("张学友");
 		user.setPassword("jacky");
 		user.setRegistDate(sdf.format(new Date()));
 		File file = new File("D:"+File.separator+"ubuntu.png");
