@@ -4,7 +4,12 @@
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.util.List"%>
 <!-- 项目路径 -->
-<c:set var="base" value="http://localhost:8080/testwechat" scope="application"></c:set>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+			+ path;
+%>
+<c:set var="base" value="<%=basePath%>" scope="application"></c:set>
 <!-- validform -->
 <link rel="stylesheet" href="${base }/assets/js/validform/css/style.css" type="text/css" />
 <script type="text/javascript" src="${base }/assets/js/validform/js/jquery-1.9.1.min.js"></script>
